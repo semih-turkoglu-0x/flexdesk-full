@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <a routerLink="/">FlexDesk</a>
+
+  <span class="spacer"></span>
+
+  @if (authService.currentUser$ | async) {
+  <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+    >Accueil</a
+  >
+  <a mat-button routerLink="/room-planning" routerLinkActive="active">Planning Bureau</a>
+  <a mat-button routerLink="/personal-planning" routerLinkActive="active">Planning Personnel</a>
+  <button mat-button color="warn" (click)="logout()">Déconnexion</button>
+  } @else {
+  <a mat-button routerLink="/login" routerLinkActive="active">Connexion</a>
+  }
+</mat-toolbar>
+
+<main class="app-content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <p>&copy; 2025 FlexDesk App</p>
+</footer>

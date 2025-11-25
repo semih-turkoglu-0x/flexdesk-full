@@ -1,0 +1,51 @@
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>Gére ton temps avec <span class="brand-highlight">FlexDesk</span></h1>
+    <p>Alors ça fait pas pro ça ?</p>
+    <div class="hero-actions">
+      <button mat-raised-button color="primary" routerLink="/room-planning">Commencer</button>
+      <button mat-stroked-button class="secondary-btn" routerLink="/login">Se connecter</button>
+    </div>
+  </div>
+</div>
+
+<div class="features-container">
+  <div class="section-header">
+    <h2>Outils</h2>
+    <p>Accède aux principales fonctionnalités</p>
+  </div>
+
+  <div class="planning-cards">
+    <mat-card class="planning-card" routerLink="/room-planning">
+      <div class="card-icon-wrapper room-icon">
+        <mat-icon>meeting_room</mat-icon>
+      </div>
+      <mat-card-header>
+        <mat-card-title>Planning du Bureau</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          C'est ici que tu peux encoder visualiser l'horaire du bureau !
+        </p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <span class="link-text">Accéder <mat-icon>arrow_forward</mat-icon></span>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="planning-card" routerLink="/personal-planning">
+      <div class="card-icon-wrapper personal-icon">
+        <mat-icon>person</mat-icon>
+      </div>
+      <mat-card-header>
+        <mat-card-title>Mon Planning</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Planning privé, accessible que pour l'utilisateur courant.</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <span class="link-text">Accéder <mat-icon>arrow_forward</mat-icon></span>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

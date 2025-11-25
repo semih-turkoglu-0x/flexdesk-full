@@ -1,0 +1,61 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  background: var(--primary-color) !important;
+  color: white !important;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  height: 64px;
+}
+
+mat-toolbar span:first-child {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+mat-toolbar a {
+  color: #cbd5e1 !important; /* Slate 300 */
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-left: 4px;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+mat-toolbar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white !important;
+}
+
+mat-toolbar a.active {
+  background-color: var(--accent-color);
+  color: white !important;
+}
+
+.app-content {
+  padding: 0; /* Remove padding to allow hero section to touch edges */
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: calc(100vh - 64px);
+}
+
+.app-footer {
+  text-align: center;
+  padding: 32px 0;
+  background-color: var(--primary-color);
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-top: auto;
+}

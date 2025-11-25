@@ -1,0 +1,70 @@
+<mat-card class="activity-form-card">
+  <mat-card-header>
+    <mat-card-title>Nouvelle Activité</mat-card-title>
+  </mat-card-header>
+
+  <form [formGroup]="activityForm" (ngSubmit)="onSubmit()">
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nom de l'activité</mat-label>
+        <input matInput formControlName="name" placeholder="Ex: Réunion d'équipe" />
+        @if (activityForm.get('name')?.hasError('required')) {
+        <mat-error>Le nom est obligatoire.</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Date de l'Activité</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="activityDate" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          @if (activityForm.get('activityDate')?.hasError('required')) {
+          <mat-error>La date est obligatoire.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Heure</mat-label>
+          <input matInput type="time" formControlName="activityTime" />
+          @if (activityForm.get('activityTime')?.hasError('required')) {
+          <mat-error>L'heure est obligatoire.</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Catégorie</mat-label>
+          <mat-select formControlName="category">
+            @for (cat of categories; track cat) {
+            <mat-option [value]="cat">
+              {{ cat }}
+            </mat-option>
+            }
+          </mat-select>
+          @if (activityForm.get('category')?.hasError('required')) {
+          <mat-error>La catégorie est obligatoire.</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Détails de l'activité (Description)</mat-label>
+        <textarea
+          matInput
+          formControlName="description"
+          placeholder="Détails de l'activité..."
+          rows="3"
+        ></textarea>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-button mat-dialog-close>Annuler</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!activityForm.valid">
+        Ajouter l'Activité
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>

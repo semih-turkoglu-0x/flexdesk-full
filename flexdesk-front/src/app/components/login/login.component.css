@@ -1,0 +1,43 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px); /* Subtract toolbar height */
+  background-color: var(--background-color);
+}
+
+mat-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-lg) !important;
+  background: white !important;
+}
+
+/* Style the tabs to look cleaner */
+::ng-deep .mat-mdc-tab-group {
+  margin-bottom: 24px;
+}
+
+::ng-deep .mat-mdc-tab-header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 24px;
+}
+
+.auth-form button {
+  height: 48px;
+  font-size: 1rem;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+mat-form-field {
+  width: 100%;
+}

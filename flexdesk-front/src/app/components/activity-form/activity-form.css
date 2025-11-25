@@ -1,0 +1,52 @@
+.activity-form-card {
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: none !important; /* Remove shadow inside dialog */
+  border: none !important;
+  padding: 24px;
+}
+
+mat-card-header {
+  padding: 0 0 24px 0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.half-width {
+  flex: 1;
+  min-width: 0; 
+}
+
+mat-form-field {
+  width: 100%; 
+}
+
+mat-card-content {
+  padding: 0;
+}
+
+mat-card-actions {
+  padding: 24px 0 0 0;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 24px;
+}

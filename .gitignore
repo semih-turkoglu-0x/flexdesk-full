@@ -1,0 +1,53 @@
+# Java / Spring Boot
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.idea
+*.iws
+*.iml
+*.ipr
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+*.class
+*.log
+
+# Angular / Node
+/dist
+/tmp
+/out-tsc
+/bazel-out
+node_modules/
+npm-debug.log
+yarn-error.log
+.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# IDEs and editors
+.vscode/
+.history/
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+*.iml

@@ -1,0 +1,94 @@
+<div class="planning-layout">
+  <div class="control-section">
+    <div class="form-toggle-bar">
+      <button mat-raised-button color="accent" (click)="openAddActivityDialog()">
+        Ajouter une activité
+      </button>
+    </div>
+  </div>
+
+  <mat-card class="calendar-card">
+    <mat-card-content>
+      <div class="calendar-header-controls">
+        <div>
+          <button
+            mat-flat-button
+            color="primary"
+            mwlCalendarPreviousView
+            [view]="view"
+            [(viewDate)]="viewDate"
+          >
+            Précédent
+          </button>
+          <button mat-button mwlCalendarToday [(viewDate)]="viewDate">Aujourd'hui</button>
+          <button
+            mat-flat-button
+            color="primary"
+            mwlCalendarNextView
+            [view]="view"
+            [(viewDate)]="viewDate"
+          >
+            Suivant
+          </button>
+        </div>
+
+        <span class="header-title">
+          <h3>{{ viewDate | calendarDate : view + 'ViewTitle' : 'fr' }}</h3>
+        </span>
+
+        <div>
+          <button
+            mat-stroked-button
+            (click)="setView(CalendarView.Month)"
+            [color]="view === CalendarView.Month ? 'accent' : undefined"
+          >
+            Mois
+          </button>
+          <button
+            mat-stroked-button
+            (click)="setView(CalendarView.Week)"
+            [color]="view === CalendarView.Week ? 'accent' : undefined"
+          >
+            Semaine
+          </button>
+          <button
+            mat-stroked-button
+            (click)="setView(CalendarView.Day)"
+            [color]="view === CalendarView.Day ? 'accent' : undefined"
+          >
+            Jour
+          </button>
+        </div>
+      </div>
+
+      <div class="calendar-view">
+        @switch (view) { @case (CalendarView.Month) {
+        <mwl-calendar-month-view
+          [viewDate]="viewDate"
+          [events]="calendarEvents"
+          [locale]="'fr'"
+          [activeDayIsOpen]="true"
+          (eventTimesChanged)="eventTimesChanged($event)"
+          (eventClicked)="eventClicked($event)"
+        />
+        } @case (CalendarView.Week) {
+        <mwl-calendar-week-view 
+          [viewDate]="viewDate" 
+          [events]="calendarEvents" 
+          [locale]="'fr'" 
+          (eventTimesChanged)="eventTimesChanged($event)"
+          (eventClicked)="eventClicked($event)"
+        />
+        } @case (CalendarView.Day) {
+        <mwl-calendar-day-view 
+          [viewDate]="viewDate" 
+          [events]="calendarEvents" 
+          [locale]="'fr'" 
+          (eventTimesChanged)="eventTimesChanged($event)"
+          (eventClicked)="eventClicked($event)"
+        />
+        } }
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
