@@ -35,7 +35,26 @@
               name="password"
               required
             />
+            </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Firstname</mat-label>
+            <input
+              matInput
+              [(ngModel)]="registerData.firstName" name="firstName" />
           </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Lastname</mat-label>
+            <input
+              matInput
+              [(ngModel)]="registerData.lastName" name="lastName" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Surname</mat-label>
+            <input
+              matInput
+              [(ngModel)]="registerData.surName" name="surName" />
+          </mat-form-field>
+          <p>Fields marked with * are mandatory.</p>
           <button mat-raised-button color="accent" type="submit">Register</button>
         </form>
       </mat-tab>

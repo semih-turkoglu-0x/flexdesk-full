@@ -1,20 +1,19 @@
 export interface User {
-    userId?: number;
-    username?: string;
+    userId: number;
     email: string;
-    password?: string;
+    password: string;
     firstName?: string;
     lastName?: string;
-    surname?: string;
-    isAdmin?: boolean;
+    surName?: string;
+    isAdmin: boolean;
 }
 
 export interface Activity {
     activityId: number;
     activityName: string;
-    activityDescription: string;
+    activityDescription?: string;
     activityTime: Date | string;
-    endTime?: Date | string;
+    endTime: Date | string;
     requestingUser: User;
     category: string;
 }

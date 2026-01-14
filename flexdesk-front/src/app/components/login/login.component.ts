@@ -27,7 +27,7 @@ import { ToastService } from '../../services/toast.service';
 })
 export class LoginComponent {
   loginData = { email: '', password: '' };
-  registerData = { email: '', password: '' };
+  registerData = { email: '', password: '', surName: '', lastName: '', firstName: '' };
   
   constructor(
     private authService: AuthService, 
