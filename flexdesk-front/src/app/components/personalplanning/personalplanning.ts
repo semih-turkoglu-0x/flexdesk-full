@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { 
@@ -59,7 +59,8 @@ export class PersonalPlanningComponent implements OnInit {
 
   constructor(
     private activityService: ActivityService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -86,9 +87,10 @@ export class PersonalPlanningComponent implements OnInit {
             },
             draggable: true,
             resizable: { beforeStart: true, afterEnd: true },
-            meta: activity 
+            meta: activity
           };
         });
+        this.cdr.markForCheck();
       },
       error: (err) => {
         console.error('Error fetching activities:', err);

@@ -22,6 +22,14 @@ public class Activity {
   private String category;
   private LocalDateTime endTime;
 
+  public Integer getActivityId() {
+    return activityId;
+  }
+
+  public void setActivityId(Integer activityId) {
+    this.activityId = activityId;
+  }
+
   public String getActivityName() {
     return activityName;
   }
