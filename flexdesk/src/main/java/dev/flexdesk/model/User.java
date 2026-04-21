@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "users")
@@ -19,6 +20,7 @@ public class User {
   private String firstName;
   private String lastName;
   private String surName;
+  @JsonProperty("isAdmin")
   private boolean isAdmin;
   @Column(unique = true)
   private String username;
